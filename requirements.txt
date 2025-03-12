@@ -2,8 +2,6 @@ streamlit
 pandas
 numpy
 matplotlib
-re
 wordcloud
 nltk
-collections
 altair
