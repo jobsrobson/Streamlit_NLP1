@@ -1,4 +1,4 @@
-# Análise Estastística de Dados Textuais - NLP - Streamlit
+# Análise Estatística de Dados Textuais - NLP - Streamlit
 # Autor: Robson Ricardo 
 # Para a disciplina de Tópicos em NLP, do curso de graduação em Ciência de Dados e Inteligência Artificial do IESB.
 
