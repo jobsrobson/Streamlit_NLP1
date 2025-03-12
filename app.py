@@ -79,8 +79,8 @@ if not text:
 def clean_text(text):
     text = text.lower() # Converte para minúsculas
     text = re.sub(r'\d+', '', text) # Remove números
-    # Remove pontuação (exceto hífen quando entre letras)
-    text = re.sub(r'[^\w\s-]', '', text)
+    # Remove pontuação (exceto hífen quando entre letras e apóstrofo)
+    text = re.sub(r'[^\w\s\-\']', '', text)
     text = text.strip() # Remove espaços em branco
     return text
 
