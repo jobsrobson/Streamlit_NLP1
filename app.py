@@ -94,7 +94,16 @@ def tokenize_text(text):
 tokens = tokenize_text(text_clean)
 
 # 3. Remoção de Stopwords e Palavras com 2 ou menos caracteres
-stop_words = set(stopwords.words('portuguese') + stopwords.words('english'))
+def load_stopwords(filepath):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        stop_words = set(f.read().splitlines())
+    return stop_words
+
+# Carregar stopwords em Português e Inglês
+stop_words_portuguese = load_stopwords('data/stopwords_portuguese.txt')
+stop_words_english = load_stopwords('data/stopwords_english.txt')
+stop_words = stop_words_portuguese.union(stop_words_english)
+
 tokens = [word for word in tokens if word not in stop_words and len(word) > 2]
 
 # 4. Frequência de Palavras
