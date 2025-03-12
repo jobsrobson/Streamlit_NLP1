@@ -5,3 +5,5 @@ matplotlib
 wordcloud
 nltk
 altair
+pdfplumber
+docx2txt
