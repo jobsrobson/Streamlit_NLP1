@@ -181,6 +181,29 @@ with st.container(height=425):
     col2.dataframe(df.set_index('Bigrama'), height=326, width=340)
 
 
+with st.container(height=425):
+    col1, col2 = st.columns([1, 1], gap="medium")
+
+    col1.write('###### Trigramas mais Frequentes')
+
+    # Gráfico de Barras com os 15 trigramas mais frequentes
+    trigrams = list(ngrams(tokens, 3))
+    trigram_freq = Counter(trigrams)
+    df = pd.DataFrame(trigram_freq.most_common(15), columns=['Trigrama', 'Frequência'])
+    df = df.sort_values(by='Frequência', ascending=True)
+    chart = alt.Chart(df).mark_bar(color="#ff7657").encode(
+        x=alt.X("Frequência:Q", title=""),
+        y=alt.Y("Trigrama:N", title="", sort="-x"),
+    )
+    col1.altair_chart(chart, use_container_width=True)
+
+    # Tabela com os 15 trigramas mais frequentes
+    col2.write('######')
+    # Ordernar em ordem decrescente
+    df = df.sort_values(by='Frequência', ascending=False)
+    col2.dataframe(df.set_index('Trigrama'), height=326, width=480)
+
+
 with st.container(height=580):
     st.write('###### Nuvem de Palavras')
     wordcloud = WordCloud(width=800, height=400, background_color='white', colormap='autumn').generate(' '.join(tokens))
