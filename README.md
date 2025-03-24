@@ -1,4 +1,4 @@
-# Análise Estatística de Textos em Streamlit  
+# Análise Estatística de Textos
 
 Este repositório contém uma aplicação web interativa desenvolvida com **Streamlit** para análise estatística de textos. A aplicação suporta arquivos **PDF** e **DOCX**, além de textos da área de transferência, oferecendo insights como contagem de palavras, bigramas, nuvem de palavras e métricas estatísticas.
 
